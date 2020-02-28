@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script><![endif]-->
+	<title></title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />
+	<link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="wrapper">
+
+	<header class="header">
+		
+	</header><!-- .header-->
+
+	<main class="content">
+		
+<H3>лесенка</H3>
+<FORM NAME="Sel1">
+    <!-- Анкета -->
+    <TABLE>
+        <TR><TD><B>сумма<B></TD>
+            <TD><INPUT id="Family" type = "number" SIZE=20 VALUE="1"></TD></TR>
+        <TR><TD><B>коэффициент<B></TD>
+            <TD><INPUT id="Name" type = "number" SIZE=20 VALUE="1"></TD></TR>
+        <TR><TD><B>ступени<B></TD>
+            <TD><INPUT id="Age" type = "number" SIZE=3 VALUE="1"></TD></TR>
+    </TABLE>
+    <!-- Кнопки готовности и сброса -->
+    <INPUT TYPE="button" VALUE="Готово" onClick="Complete();">
+</FORM>
+		<div id="res"> </div>
+		<script>
+		
+		 function Complete()
+        {
+            var Elem="Фамилия: " + document.getElementById("Family").value +
+                "\nИмя: " + document.getElementById("Name").value +
+                "\nВозраст: " + document.getElementById("Age").value;                
+			
+			var sum = document.getElementById("Family").value;
+			var kef = document.getElementById("Name").value;
+			var stu = document.getElementById("Age").value;
+			var str="";
+			
+			for (var i=0; i<stu;i++) {			
+				
+				str += (i+1) + ") " + sum + " * " + kef + " = "; 
+
+				sum*=kef;
+				
+				str+=sum.toFixed(2)+"</br>";			
+				
+				document.getElementById("res").innerHTML = str;
+				}
+        }
+		
+		</script>
+		
+	</main><!-- .content -->
+
+</div><!-- .wrapper -->
+
+<footer class="footer">
+	
+</footer><!-- .footer -->
+
+</body>
+</html>
